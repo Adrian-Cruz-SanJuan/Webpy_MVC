@@ -1,12 +1,12 @@
 import web
 
 urls = (
-    '/', 'application.controllers.index.Index',
-    '/insert', 'application.controllers.insert.Insert',
-    '/delete', 'application.controllers.delete.Delete',
-    '/update', 'application.controllers.update.Update',
-    '/view', 'application.controllers.view.View',
-     '/list', 'application.controllers.list.List',
+    '/', 'application.controllers.alumnos.index.Index',
+    '/insert', 'application.controllers.alumnos.insert.Insert',
+    '/delete', 'application.controllers.alumnos.delete.Delete',
+    '/update', 'application.controllers.alumnos.update.Update',
+    '/view', 'application.controllers.alumnos.view.View',
+     '/list', 'application.controllers.alumnos.list.List',
 )
 app = web.application(urls, globals())
 

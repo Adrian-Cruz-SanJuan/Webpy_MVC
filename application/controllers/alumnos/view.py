@@ -1,7 +1,7 @@
 import web 
 import app 
 
-render=web.template.render('application/views/')
+render=web.template.render('application/views/alumnos/')
 
 class View():
 
