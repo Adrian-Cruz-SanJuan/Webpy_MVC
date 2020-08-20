@@ -49,15 +49,16 @@
 					</tr>
 				</thead>
 				<tbody>
+					$for row in result:
 					<tr>
-						<td>1718111017</td>
-						<td>Adrián</td>
-						<td>Cruz</td>
-						<td>San Juan</td>
-						<td>22</td>
-						<td>22/05/1998</td>
-						<td>Masculino</td>
-						<td>Hidalgo</td>
+						<td>$row['matricula']</td>
+						<td>$row['nombre']</td>
+						<td>$row['primer_a']</td>
+						<td>$row['Segundo_a']</td>
+						<td>$row['edad']</td>
+						<td>$row['fecha_nacimiento']</td>
+						<td>$row['sexo']</td>
+						<td>$row['estado']</td>
 					</tr>
 				</tbody>
 			</table>
