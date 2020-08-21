@@ -1,6 +1,8 @@
 import web 
 import app 
+import application.models.model as alumnos
 
+model_alumnos = alumnos.Alumnos()
 render=web.template.render('application/views/alumnos/')
 
 class Insert():
@@ -13,15 +15,16 @@ class Insert():
     def POST(self):
       try:
         form = web.input()
-        print(form)
-        print(form.matricula)
-        print(form.nombre)
-        print(form.primer_a)
-        print(form.segundo_a)
-        print(form.edad)
-        print(form.fecha_nacimiento)
-        print(form.sexo)
-        print(form.estado)
-        return render.insert()
+        matricula = form.matricula
+        nombre = form.nombre
+        primer_a = form.primer_a
+        segundo_a = form.segundo_a
+        edad = form.edad
+        fecha_nacimiento = form.fecha_nacimiento
+        sexo = form.sexo
+        estado = form.estado
+        model_alumnos.insert(matricula,nombre,primer_a,segundo_a,edad,fecha_nacimiento,sexo,estado)
+        web.seeother('/list')
       except Exception as e:
-        return "Error en el registro" + str(e.args)
+        print(e)
+        return render.insert()

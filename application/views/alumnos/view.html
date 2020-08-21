@@ -1,23 +1,107 @@
+$def with(result)
 <!DOCTYPE html>
 <html>
-  <header>
-   <center><h3 class="text-light bg-dark", "text-center">LISTA DE ALUMNOS<br>
-    <a class="navbar-brand" href="/">REGRESAR</a></h3>
-  </header>
-  <body background="https://userscontent2.emaze.com/images/5aaa7739-20d4-47e2-ba36-16218294b562/ffca82def668a2a5dc221ddd321b0171.jpg">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<table class="table table-ligth">
-  <thead>
-    <tr>
-      <th scope="col">Matricula</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Primer apellido</th>
-      <th scope="col">Segundo apellido</th>
-      <th scope="col">Fecha de nacimiento</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Estado</th>
-    </tr>
-</table>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar alumno</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!--<link rel="stylesheet" href="styles/debug.css">-->
+  </head>
+  <body>
+    <nav class="navbar is-primary">
+      <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="/" style="font-weight: bold;">
+                    Inicio
+              </a>
+              <span class="navbar-burger burger" data-target="navMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </span>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+              <div class="navbar-end">
+                  <a class="navbar-item" href="/insert">Insertar</a>
+                  <a class="navbar-item" href="/update">Actualizar</a>
+                  <a class="navbar-item" href="/list">Alumnos</a>
+                  <a class="navbar-item" href="/delete">Eliminar</a>
+                  <!--<a class="navbar-item" href="#">Ver Alumno</a>-->
+              </div>
+            </div>
+      </div>
+  </nav>
+    <div class="formulario" style="max-width: 33%; min-width: 80%; padding: 2%; margin: 10px auto;">
+      <div class="notification is-light">
+          <form method="" action="">
+              <div class="field">
+                  <label class="label" form="matricula">Matricula: </label>
+                  <div class="control">
+                      <input class="input" name="matricula" required type="text" value="$result['matricula']">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label" form="nombre">Nombre: </label>
+                  <div class="control">    
+                      <input class="input" name="nombre" required type="text" value="$result['nombre']">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label" form="primer_a">Primer apellido: </label>
+                  <div class="control">
+                      <input class="input" name="primer_a" required type="text" value="$result['primer_a']">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label" form="segundo_a">Segundo apellido: </label>
+                  <div class="control">
+                      <input class="input" name="segundo_a" required type="text" value="$result['segundo_a']">
+                  </div>    
+              </div>
+              <div class="field">
+                  <label class="label" form="edad">Edad: </label>
+                  <div class="control">
+                      <input class="input" name="edad" required type="text">
+                  </div>    
+              </div>
+              <div class="field">
+                  <label class="label" form="fecha_nacimiento">Fecha de nacimiento: </label>
+                  <div class="control">
+                      <input class="input" name="fecha_nacimiento" required type="text">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label" form="sexo">Sexo: </label>
+                  <div class="control">
+                    <input class="input" name="sexo" required type="text">
+                  </div>
+              </div>
+              <div class="field" required>
+                  <label class="label" form="estado">Estado: </label>
+                  <div class="control">
+                    <input class="input" name="estado" required type="text">
+                  </div>    
+              </div>
+              <div class="control">
+                  <a class="button is-info is-medium" href="/">Inicio</a>
+              </div>
+          </form>
+      </div>
+  </div>
+  
+  
+  <script type="text/javascript">
+      (function(){
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+
+        burger.addEventListener('click', function(){
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-active');
+        });
+      });
+    </script> 
   </body>
 </html>
