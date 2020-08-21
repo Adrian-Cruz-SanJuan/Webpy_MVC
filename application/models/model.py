@@ -81,6 +81,34 @@ class Alumnos():
             print(e)
             return False
 
+    def delete(self, matricula):
+        try:
+            self.connect()
+            query = ("DELETE FROM ALUMNOS WHERE matricula= %s;")
+            values = (matricula,)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
+    def update(self, matricula, nombre,primer_a, segundo_a, edad, fecha_nacimiento,sexo,estado):
+        try:
+            self.connect()
+            query = ("UPDATE ALUMNOS SET nombre=%s,primer_a=%s,segundo_a=%s,edad=%s,fecha_nacimiento=%s,sexo=%s,estado=%s WHERE matricula=%s;")
+            values = (nombre,primer_a,segundo_a,edad,fecha_nacimiento,sexo,estado,matricula)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
 objeto = Alumnos()
 objeto.connect() 
 for row in objeto.select():
